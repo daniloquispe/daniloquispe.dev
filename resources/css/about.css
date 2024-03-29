@@ -1,0 +1,48 @@
+.my-photo
+{
+	@apply block mx-auto;
+	@apply w-48 h-48 mb-4;
+	@apply rounded-full shadow-lg;
+}
+
+/* Skills */
+
+ul.skills
+{
+	@apply flex flex-wrap gap-3 justify-center;
+	@apply text-center text-lg;
+}
+
+ul.skills li
+{
+	@apply transition-colors;
+	@apply inline-block px-3 py-2;
+	@apply rounded-lg hover:shadow-md;
+	@apply bg-teal-300 dark:bg-teal-700;
+}
+
+ul.skills + p
+{
+	@apply pt-4;
+	@apply text-center;
+}
+
+/* Languages */
+
+ul.languages
+{
+	@apply grid grid-cols-2 md:grid-cols-4 gap-3;
+	@apply text-center;
+}
+
+ul.languages .language-icon
+{
+	@apply inline-block mb-4 p-5 rounded-full shadow-lg;
+	@apply text-5xl;
+	@apply bg-white dark:bg-gray-600;
+}
+
+ul.languages h2
+{
+	@apply text-2xl;
+}

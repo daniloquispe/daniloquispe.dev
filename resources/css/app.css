@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Istok+Web:wght@700&display=swap');
+
+@import "index.css";
+@import "about.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*
+{
+	font-family: Lato, Helvetica, Arial, sans-serif;
+	@apply print:text-xs;
+}
+
+body
+{
+	@apply bg-gray-100 dark:bg-gray-900;
+	@apply text-gray-900 dark:text-gray-100;
+}
+
+h1
+{
+	font-family: Inconsolata, monospace;
+	@apply font-bold;
+}
+
+footer
+{
+	@apply text-center;
+}
+
+/* Inner pages */
+
+#inner-header
+{
+	@apply block fixed w-full top-0;
+	@apply flex flex-col justify-center;
+	@apply h-16 px-4;
+	@apply bg-teal-900;
+	@apply text-white;
+}
+
+#inner-header a
+{
+	@apply flex flex-row gap-3 items-center;
+}
+
+#inner-header img
+{
+	@apply inline-block;
+	@apply w-10 h-10 rounded-full;
+}
+
+#inner-header h1
+{
+	@apply inline;
+	@apply font-bold tracking-wider;
+}
+
+#inner-content
+{
+	@apply mt-16;
+}
+
+.resume-section
+{
+	@apply container mx-auto my-16;
+	@apply px-4 sm:px-0;
+}
+
+.resume-section > h2
+{
+	@apply py-9;
+	@apply font-bold text-3xl text-center;
+	@apply text-teal-700 dark:text-teal-500;
+	font-family: Inconsolata, monospace;
+}
+
+.resume-section p
+{
+	@apply mb-4;
+}
+
+#inner-footer
+{
+	@apply p-4;
+	@apply bg-gray-200 dark:bg-gray-800;
+}

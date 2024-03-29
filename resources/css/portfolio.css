@@ -1,0 +1,64 @@
+.home-section
+{
+	@apply w-full;
+}
+
+.home-section > div
+{
+	@apply container mx-auto;
+}
+
+.home-section > div > h2
+{
+	@apply text-center text-3xl;
+}
+
+/* Title */
+
+.title
+{
+	@apply h-screen;
+	@apply flex flex-col items-center justify-center;
+	@apply text-center;
+}
+
+.title h1
+{
+	@apply text-5xl;
+}
+
+.title .lead
+{
+	@apply text-3xl;
+}
+
+/* Portfolio */
+
+.portfolio-items
+{
+	@apply grid gap-9;
+	@apply sm:grid-cols-2;
+	@apply lg:grid-cols-3;
+	@apply text-center;
+}
+
+.portfolio-item
+{
+	@apply hover:shadow-lg;
+}
+
+.portfolio-item img
+{
+	@apply block rounded-md;
+}
+
+.portfolio-item h3
+{
+	@apply px-3 mt-2 mb--1;
+	@apply text-2xl;
+}
+
+.portfolio-item p
+{
+	@apply px-3 my-1;
+}
