@@ -30,6 +30,12 @@
 							Resume (printable)
 						</a>
 					</li>
+					<li>
+						<a href="{{ route('my-portfolio.index') }}">
+							<i class="fa-solid fa-briefcase"></i>
+							Portfolio
+						</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

@@ -3,6 +3,7 @@
 
 @import "index.css";
 @import "about.css";
+@import "portfolio.css";
 
 @tailwind base;
 @tailwind components;

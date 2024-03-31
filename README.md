@@ -2,16 +2,16 @@
 
 This is my personal "developer" website!
 
-Current (first) version includes:
+Current version includes:
 
 - Home
 - About me
 - Resume (external link to https://resume.daniloquispe.dev)
+- Portfolio
 - Chat module ([tawk.to](https://www.tawk.to))
 
 Coming soon:
 
-- Portfolio
 - Social links
 - CMS
 

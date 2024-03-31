@@ -1,42 +1,8 @@
-.home-section
-{
-	@apply w-full;
-}
-
-.home-section > div
-{
-	@apply container mx-auto;
-}
-
-.home-section > div > h2
-{
-	@apply text-center text-3xl;
-}
-
-/* Title */
-
-.title
-{
-	@apply h-screen;
-	@apply flex flex-col items-center justify-center;
-	@apply text-center;
-}
-
-.title h1
-{
-	@apply text-5xl;
-}
-
-.title .lead
-{
-	@apply text-3xl;
-}
-
-/* Portfolio */
+/* List */
 
 .portfolio-items
 {
-	@apply grid gap-9;
+	@apply grid gap-12;
 	@apply sm:grid-cols-2;
 	@apply lg:grid-cols-3;
 	@apply text-center;
@@ -44,12 +10,9 @@
 
 .portfolio-item
 {
-	@apply hover:shadow-lg;
-}
-
-.portfolio-item img
-{
-	@apply block rounded-md;
+	@apply rounded-md;
+	@apply hover:shadow-lg hover:bg-white;
+	@apply transition-colors;
 }
 
 .portfolio-item h3
@@ -61,4 +24,60 @@
 .portfolio-item p
 {
 	@apply px-3 my-1;
+}
+
+/* Detail */
+
+.resume-section.portfolio > h2
+{
+	@apply pb-0;
+}
+
+.resume-section.portfolio > h2 + p
+{
+	@apply pb-9 text-center;
+}
+
+.resume-section.portfolio h3
+{
+	@apply text-2xl mb-4;
+	@apply text-teal-700 dark:text-teal-500;
+}
+
+.resume-section .screenshot
+{
+	@apply mx-auto mb-9;
+}
+
+.resume-section .description-wrapper
+{
+	@apply md:grid md:grid-cols-2 md:gap-6;
+}
+
+.resume-section .description a
+{
+	@apply text-teal-700 hover:text-orange-400;
+	@apply transition-colors;
+}
+
+.resume-section .description ul
+{
+	@apply list-disc;
+	@apply ml-6 mb-4;
+}
+
+.resume-section .technologies li
+{
+	@apply inline-block mb-4 px-3 py-1 rounded-md;
+	@apply bg-white dark:bg-gray-600;
+}
+
+.resume-section .back
+{
+	@apply inline-block;
+	@apply mt-9 px-5 py-2;
+	@apply rounded-lg;
+	@apply text-white;
+	@apply bg-teal-700 hover:bg-orange-400 hover:shadow-lg;
+	@apply transition-colors;
 }
