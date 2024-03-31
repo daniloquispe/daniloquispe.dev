@@ -39,7 +39,7 @@
 	@yield('content')
 </div>
 {{-- JS --}}
-<script src="{{ mix('js/app.js') }}"></script>
+@vite('resources/js/app.js')
 @env('production')
 	<!--Start of Tawk.to Script-->
 	<script type="text/javascript">
