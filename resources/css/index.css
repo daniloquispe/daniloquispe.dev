@@ -30,7 +30,8 @@
 
 .hero h1
 {
-	@apply text-5xl text-white font-bold tracking-wider;
+	@apply text-4xl sm:text-5xl;
+	@apply text-white font-bold tracking-wider;
 }
 
 .hero h1::before
@@ -47,7 +48,8 @@
 
 .hero p
 {
-	@apply my-2 text-2xl;
+	@apply my-2;
+	@apply text-xl sm:text-2xl;
 }
 
 .hero footer
