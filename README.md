@@ -9,10 +9,10 @@ Current version includes:
 - Resume (external link to https://resume.daniloquispe.dev)
 - Portfolio
 - Chat module ([tawk.to](https://www.tawk.to))
+- Social links
 
 Coming soon:
 
-- Social links
 - CMS
 
 Made with [Laravel](https://www.laravel.com) and [Tailwind CSS](https://www.tailwindcss.com).
