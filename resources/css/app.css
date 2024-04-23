@@ -124,3 +124,30 @@ footer
 	@apply p-4;
 	@apply bg-gray-200 dark:bg-gray-800;
 }
+
+/* Footer menu */
+
+.footer-menu
+{
+	@apply items-center;
+}
+
+.footer-menu ul
+{
+	@apply inline-flex gap-2;
+	@apply mb-2;
+}
+
+.footer-menu a
+{
+	@apply flex flex-row items-center justify-center;
+	@apply h-12 w-12 rounded-full;
+	@apply bg-teal-700 text-teal-100 hover:bg-teal-800;
+	@apply text-2xl;
+	@apply transition-colors;
+}
+
+#inner-footer .footer-menu a
+{
+	@apply bg-gray-300 dark:bg-gray-700 hover:bg-teal-700 hover:text-gray-100 dark:hover:bg-teal-800;
+}
