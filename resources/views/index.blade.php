@@ -26,14 +26,20 @@
 						</a>
 					</li>
 					<li>
-						<a href="https://resume.daniloquispe.dev" target="_blank">
-							Resume (printable)
+						<a href="{{ route('experience') }}">
+							<i class="fa-solid fa-briefcase"></i>
+							Job experience
 						</a>
 					</li>
 					<li>
 						<a href="{{ route('my-portfolio.index') }}">
 							<i class="fa-solid fa-briefcase"></i>
 							Portfolio
+						</a>
+					</li>
+					<li>
+						<a href="https://resume.daniloquispe.dev" target="_blank">
+							Resume (printable)
 						</a>
 					</li>
 				</ul>

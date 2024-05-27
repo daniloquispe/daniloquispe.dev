@@ -1,0 +1,45 @@
+.timeline
+{
+	@apply relative;
+	@apply border-s border-gray-200 dark:border-gray-700;
+}
+
+.timeline > li
+{
+	@apply mb-10 ms-4;
+}
+
+.timeline .marker
+{
+	@apply absolute;
+	@apply w-3 h-3 rounded-full;
+	@apply bg-teal-600 mt-1.5 -start-1.5 border border-teal-400 dark:border-teal-900 dark:bg-teal-400;
+}
+
+.timeline .period
+{
+	@apply mb-1;
+	@apply text-gray-400 dark:text-gray-500;
+	@apply text-sm font-normal leading-none;
+}
+
+.timeline h3
+{
+	@apply text-lg font-semibold text-gray-900 dark:text-white;
+}
+
+.timeline p.location
+{
+	@apply text-gray-700 dark:text-gray-300;
+}
+
+.timeline .detail
+{
+	@apply mb-4 text-base font-normal text-gray-500 dark:text-gray-400;
+}
+
+.timeline .detail ul
+{
+	@apply ml-6;
+	@apply list-disc;
+}

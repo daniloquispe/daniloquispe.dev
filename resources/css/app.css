@@ -4,6 +4,7 @@
 @import "index.css";
 @import "about.css";
 @import "portfolio.css";
+@import "timeline.css";
 
 @tailwind base;
 @tailwind components;
@@ -36,7 +37,7 @@ footer
 
 #inner-header
 {
-	@apply block fixed w-full top-0;
+	@apply block fixed w-full top-0 z-10;
 	@apply flex flex-row justify-between;
 	@apply h-16 px-4;
 	@apply bg-teal-900;

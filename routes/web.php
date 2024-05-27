@@ -19,5 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('', 'index')->name('index');
 Route::view('about-me', 'about')->name('about');
+Route::view('job-experience', 'job-experience')->name('experience');
 Route::get('my-portfolio', [\App\Http\Controllers\PortfolioController::class, 'index'])->name('my-portfolio.index');
 Route::get('my-portfolio/{item}', [\App\Http\Controllers\PortfolioController::class, 'show'])->name('my-portfolio.show');

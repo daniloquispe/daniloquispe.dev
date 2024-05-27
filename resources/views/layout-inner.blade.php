@@ -9,7 +9,7 @@
 			<ul>
 				<li><a href="{{ route('index') }}">&larr; Home</a></li>
 				<li><a href="{{ route('about') }}" @if(Route::is('about')) class="active" @endif>About me</a></li>
-				<li><a href="https://resume.daniloquispe.dev" target="_blank">Resume</a></li>
+				<li><a href="{{ route('experience') }}" @if(Route::is('experience')) class="active" @endif>Job experience</a></li>
 				<li><a href="{{ route('my-portfolio.index') }}" @if(Route::is('my-portfolio.*')) class="active" @endif>Portfolio</a></li>
 			</ul>
 		</nav>

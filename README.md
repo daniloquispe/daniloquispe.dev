@@ -7,6 +7,7 @@ Current version includes:
 - Home
 - About me
 - Resume (external link to https://resume.daniloquispe.dev)
+- Job experience
 - Portfolio
 - Chat module ([tawk.to](https://www.tawk.to))
 - Social links
