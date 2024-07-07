@@ -13,6 +13,31 @@ const meta = {
 	canonicalRoute: "/about",
 	image: '/images/photo.jpg',
 };
+
+const skills = ["GNU/Linux", "HTML 5", "CSS 3", "Tailwind CSS", "Bootstrap 3/4/5", "JavaScript", "Vue 2/3", "PHP 7/8", "Laravel 7/8/9/10/11", "MySQL / MariaDB", "AWS", "UML modeling", "Astro"];
+
+const languages = [
+	{
+		icon: "🇵🇪",
+		name: "Spanish",
+		level: "Native"
+	},
+	{
+		icon: "🇺🇸",
+		name: "English",
+		level: "Intermediate"
+	},
+	{
+		icon: "🇧🇷",
+		name: "Portuguese",
+		level: "Basic"
+	},
+	{
+		icon: "🤟",
+		name: "Sign language",
+		level: "Intermediate"
+	},
+];
 ---
 
 <MainLayout meta={meta}>
@@ -34,44 +59,23 @@ const meta = {
 		<section class="resume-section">
 			<h2>Tech skills</h2>
 			<ul class="skills">
-				<li>GNU/Linux</li>
-				<li>HTML 5</li>
-				<li>CSS 3</li>
-				<li>Tailwind CSS</li>
-				<li>Bootstrap 3/4/5</li>
-				<li>JavaScript</li>
-				<li>Vue 2/3</li>
-				<li>PHP 7/8</li>
-				<li>Laravel 7/8/9/10</li>
-				<li>MySQL / MariaDB</li>
-				<li>AWS</li>
-				<li>UML modeling</li>
+				{skills.map(skill => <li>{skill}</li>)}
 			</ul>
 			<p>... And if I don't know something, I can learn it! 👍</p>
 		</section>
 		<section class="resume-section">
 			<h2>Languages</h2>
 			<ul class="languages">
-				<li>
-					<span class="language-icon">🇵🇪</span>
-					<h2>Spanish</h2>
-					Native
+				{languages.map(function (language)
+				{
+					return (
+					<li>
+						<span class="language-icon">{language.icon}</span>
+						<h2>{language.name}</h2>
+						{language.level}
 				</li>
-				<li>
-					<span class="language-icon">🇺🇸</span>
-					<h2>English</h2>
-					Intermediate
-				</li>
-				<li>
-					<span class="language-icon">🇧🇷</span>
-					<h2>Portuguese</h2>
-					Basic
-				</li>
-				<li>
-					<span class="language-icon">🤟</span>
-					<h2>Sign language</h2>
-					Intermediate
-				</li>
+					);
+				})}
 			</ul>
 		</section>
 	</MainContent>
@@ -97,8 +101,8 @@ const meta = {
 	ul.skills li
 	{
 		@apply transition-colors;
-		@apply inline-block px-3 py-2;
-		@apply rounded-lg hover:shadow-md;
+		@apply inline-block px-4 py-1;
+		@apply rounded-full hover:shadow-md;
 		@apply bg-teal-300 dark:bg-teal-700;
 	}
 
