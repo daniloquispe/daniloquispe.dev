@@ -1,0 +1,94 @@
+---
+import { Image } from 'astro:assets';
+import avatar from '../images/avatar.png';
+
+const options = [
+	{
+		name: "About me",
+		route: "/about"
+	},
+	{
+		name: "Job experience",
+		route: "/job-experience"
+	},
+	{
+		name: "Portfolio",
+		route: "/portfolio"
+	}
+];
+---
+
+<header id="inner-header">
+	<div>
+		<a href="/"><Image src={avatar} alt="Danilo Alejandro Quispe Lucana" /><h1>DaniloQuispe.dev</h1></a>
+	</div>
+	<nav class="main-menu">
+		<ul>
+			<li><a href="/">&larr; Home</a></li>
+			{options.map(option => <li><a href={option.route}>{option.name}</a></li>)}
+		</ul>
+	</nav>
+</header>
+
+<style>
+	#inner-header
+	{
+		@apply block fixed w-full top-0 z-10;
+		@apply flex flex-row justify-between;
+		@apply h-16 px-4;
+		@apply bg-teal-900;
+		@apply text-white;
+	}
+
+	#inner-header > div,
+	#inner-header > nav
+	{
+		@apply flex flex-col justify-center;
+	}
+
+	#inner-header a
+	{
+		@apply flex flex-row gap-3 items-center;
+	}
+
+	#inner-header img
+	{
+		@apply inline-block;
+		@apply w-10 h-10 rounded-full;
+	}
+
+	#inner-header h1
+	{
+		@apply inline;
+		@apply font-bold tracking-wider;
+	}
+
+	#inner-header .main-menu ul
+	{
+		@apply flex gap-2;
+	}
+
+	#inner-header .main-menu li
+	{
+		@apply hidden sm:inline;
+	}
+	#inner-header .main-menu li:first-child
+	{
+		@apply inline sm:hidden;
+	}
+
+	#inner-header .main-menu a
+	{
+		@apply block sm:inline-block;
+		@apply my-2 sm:my-0 px-5 py-2;
+		@apply rounded-lg;
+		@apply text-white;
+		@apply bg-transparent hover:bg-teal-800 hover:shadow-lg;
+		@apply transition-colors;
+	}
+
+	#inner-header .main-menu a.active
+	{
+		@apply bg-teal-700;
+	}
+</style>

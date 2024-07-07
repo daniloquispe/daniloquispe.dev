@@ -1,0 +1,130 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../images/photo.jpg';
+
+import MainLayout from "../layouts/MainLayout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import MainContent from "../components/MainContent.astro";
+
+const meta = {
+	title: "About me - Danilo Alejandro Quispe Lucana",
+	description: "My name is Danilo, and here you can find detailed info about me as a fullstack web developer, tech skills and languages",
+	canonicalRoute: "/about",
+	image: '/images/photo.jpg',
+};
+---
+
+<MainLayout meta={meta}>
+	<SiteHeader />
+	<MainContent>
+		<section class="resume-section">
+			<h2>Who am I?</h2>
+			<Image src={photo} alt="Danilo Alejandro Quispe Lucana" class="my-photo" />
+			<p>Hello! 👋</p>
+			<p>My name is <strong>Danilo Alejandro Quispe Lucana</strong>, and I'm from <strong>Lima, Peru</strong>.</p>
+			<p>I have experience in web design and development for all-size organizations and business sectors, CMS and
+				enterprise information systems (ERPs) in desktop, client/server or Web environments. Software skills
+				acquired by self-learning (PHP, MySQL/MariaDB, GIMP, Inkscape, hosting and Web servers management).</p>
+			<p>Experienced in software development project teams, including new members selection, skills evaluation and
+				workflow planning. Experienced in direct client assistance, tech support, using remote tools (phone
+				call, e-mail, tickets systems and/or remote-control software such as AnyDesk, TeamViewer, Remmina or
+				similar).</p>
+		</section>
+		<section class="resume-section">
+			<h2>Tech skills</h2>
+			<ul class="skills">
+				<li>GNU/Linux</li>
+				<li>HTML 5</li>
+				<li>CSS 3</li>
+				<li>Tailwind CSS</li>
+				<li>Bootstrap 3/4/5</li>
+				<li>JavaScript</li>
+				<li>Vue 2/3</li>
+				<li>PHP 7/8</li>
+				<li>Laravel 7/8/9/10</li>
+				<li>MySQL / MariaDB</li>
+				<li>AWS</li>
+				<li>UML modeling</li>
+			</ul>
+			<p>... And if I don't know something, I can learn it! 👍</p>
+		</section>
+		<section class="resume-section">
+			<h2>Languages</h2>
+			<ul class="languages">
+				<li>
+					<span class="language-icon">🇵🇪</span>
+					<h2>Spanish</h2>
+					Native
+				</li>
+				<li>
+					<span class="language-icon">🇺🇸</span>
+					<h2>English</h2>
+					Intermediate
+				</li>
+				<li>
+					<span class="language-icon">🇧🇷</span>
+					<h2>Portuguese</h2>
+					Basic
+				</li>
+				<li>
+					<span class="language-icon">🤟</span>
+					<h2>Sign language</h2>
+					Intermediate
+				</li>
+			</ul>
+		</section>
+	</MainContent>
+	<SiteFooter />
+</MainLayout>
+
+<style>
+	.my-photo
+	{
+		@apply block mx-auto;
+		@apply w-48 h-48 mb-4;
+		@apply rounded-full shadow-lg;
+	}
+
+	/* Skills */
+
+	ul.skills
+	{
+		@apply flex flex-wrap gap-3 justify-center;
+		@apply text-center text-lg;
+	}
+
+	ul.skills li
+	{
+		@apply transition-colors;
+		@apply inline-block px-3 py-2;
+		@apply rounded-lg hover:shadow-md;
+		@apply bg-teal-300 dark:bg-teal-700;
+	}
+
+	ul.skills + p
+	{
+		@apply pt-4;
+		@apply text-center;
+	}
+
+	/* Languages */
+
+	ul.languages
+	{
+		@apply grid grid-cols-2 md:grid-cols-4 gap-3;
+		@apply text-center;
+	}
+
+	ul.languages .language-icon
+	{
+		@apply inline-block mb-4 p-5 rounded-full shadow-lg;
+		@apply text-5xl;
+		@apply bg-white dark:bg-gray-600;
+	}
+
+	ul.languages h2
+	{
+		@apply text-2xl;
+	}
+</style>

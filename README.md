@@ -12,8 +12,4 @@ Current version includes:
 - Chat module ([tawk.to](https://www.tawk.to))
 - Social links
 
-Coming soon:
-
-- CMS
-
-Made with [Laravel](https://www.laravel.com) and [Tailwind CSS](https://www.tailwindcss.com).
+Made with [Astro](https://astro.build) and [Tailwind CSS](https://www.tailwindcss.com).

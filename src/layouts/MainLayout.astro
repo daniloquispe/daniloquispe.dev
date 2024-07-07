@@ -1,0 +1,107 @@
+---
+import "@fontsource/lato";
+import "@fontsource-variable/jetbrains-mono";
+import Chat from "../components/Chat.astro";
+
+interface Props {
+	meta: {
+		title: string,
+		description: string,
+		image: string,
+		canonicalRoute: string
+	}
+};
+
+const {meta} = Astro.props;
+const canonicalUrl = import.meta.env.APP_URL + meta.canonicalRoute;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{meta.title}</title>
+		<meta name="description" content={meta.description} />
+		<meta name="robots" content="@index, follow" />
+		<link rel="canonical" href={canonicalUrl} />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content={meta.title} />
+		<meta property="og:description" content={meta.description} />
+		<meta property="og:image" content={meta.image} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:site_name" content="Danilo Alejandro Quispe Lucana" />
+		<meta name="twitter:title" content={meta.title}>
+		<meta name="twitter:description" content={meta.description} />
+		<meta name="twitter:image" content={meta.image} />
+		<meta name="twitter:site" content="@daniloquispe" />
+		<meta name="twitter:creator" content="@daniloquispe" />
+	</head>
+	<body>
+		<slot />
+		<Chat />
+	</body>
+</html>
+
+<style is:global>
+	*
+	{
+		font-family: Lato, Helvetica, Arial, sans-serif;
+		@apply print:text-xs;
+	}
+
+	body
+	{
+		@apply bg-gray-100 dark:bg-gray-900;
+		@apply text-gray-900 dark:text-gray-100;
+	}
+
+	h1
+	{
+		font-family: "JetBrains Mono Variable", monospace;
+		@apply font-bold;
+	}
+
+	footer
+	{
+		@apply text-center;
+	}
+
+	.resume-section
+	{
+		@apply container mx-auto my-16;
+		@apply px-4 sm:px-0;
+	}
+
+	.resume-section > h2
+	{
+		@apply py-9;
+		@apply font-bold text-3xl text-center;
+		@apply text-teal-700 dark:text-teal-500;
+		font-family: "JetBrains Mono Variable", monospace;
+	}
+
+	.resume-section p
+	{
+		@apply mb-4;
+	}
+
+	/* Document */
+
+	.document
+	{
+		@apply mb-6;
+	}
+
+	.document a
+	{
+		@apply underline;
+	}
+
+	.document ul
+	{
+		@apply list-disc;
+		@apply ml-6 mb-4;
+	}
+</style>

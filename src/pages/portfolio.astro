@@ -1,0 +1,93 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import MainContent from "../components/MainContent.astro";
+import { getCollection } from "astro:content";
+
+const meta = {
+	title: "My portfolio - Danilo Alejandro Quispe Lucana",
+	description: "Hello, world! My name is Danilo, and here you can find info about me as a fullstack web developer",
+	canonicalRoute: "/portfolio",
+	image: '/images/avatar.png',
+};
+
+// Portfolio
+const portfolio = await getCollection('portfolio');
+portfolio.reverse();
+---
+
+<MainLayout meta={meta}>
+	<SiteHeader />
+	<MainContent>
+		<section class="resume-section">
+			<h2>My portfolio</h2>
+			<ul class="items">
+				{portfolio.map(async function (portfolioItem)
+				{
+					const { Content } = await portfolioItem.render();
+
+					return (
+						<li>
+							<article>
+								<div>
+									<img src={"/images/portfolio/" + portfolioItem.data.image} alt={portfolioItem.data.name} class="screenshot" />
+								</div>
+								<div>
+									<h3 set:html={portfolioItem.data.name} />
+									<div class="document">
+										<Content />
+									</div>
+									<ul class="tags">
+										{portfolioItem.data.tags.map(tag => <li set:html={tag} />)}
+									</ul>
+								</div>
+							</article>
+						</li>
+					)
+				})}
+			</ul>
+		</section>
+	</MainContent>
+	<SiteFooter />
+</MainLayout>
+
+<style>
+	ul.items li
+	{
+		@apply mb-12;
+	}
+	ul.items li:last-child
+	{
+		@apply mb-0;
+	}
+
+	article
+	{
+		@apply flex flex-col sm:flex-row gap-8;
+	}
+
+	article > div:first-child
+	{
+		@apply sm:w-2/5 sm:flex-none;
+	}
+
+	.screenshot
+	{
+		@apply rounded-lg;
+	}
+
+	h3
+	{
+		@apply mb-4;
+		@apply text-2xl font-bold;
+		@apply text-teal-700 dark:text-teal-500;
+	}
+
+	ul.tags li
+	{
+		@apply inline-block mr-1 mb-4 px-3 py-1 rounded;
+		@apply bg-white dark:bg-gray-600;
+		@apply text-sm;
+	}
+</style>

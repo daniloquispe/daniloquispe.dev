@@ -1,0 +1,186 @@
+---
+import { Image } from 'astro:assets';
+import avatar from '../images/avatar.png';
+
+import MainLayout from "../layouts/MainLayout.astro";
+
+const meta = {
+	title: "Fullstack Developer - Danilo Alejandro Quispe Lucana",
+	description: "Hello, world! My name is Danilo, and here you can find info about me as a fullstack web developer",
+	canonicalRoute: "/",
+	image: '/images/avatar.png',
+};
+---
+
+<MainLayout meta={meta}>
+	<div class="hero">
+		<div class="center">
+			<header>
+				<p><Image src={avatar} alt="Danilo Alejandro Quispe Lucana" /></p>
+				<h1>DaniloQuispe.dev</h1>
+				<p>Fullstack Web Developer</p>
+			</header>
+			<main>
+				Hello, world! My name is <strong>Danilo</strong>, and I'm from <strong>Lima, Peru 🇵🇪</strong>
+			</main>
+			<nav class="main-menu">
+				<ul>
+					<li>
+						<a href="/about">
+							<i class="fa-solid fa-address-card"></i>
+							About me
+						</a>
+					</li>
+					<li>
+						<a href="/job-experience">
+							<i class="fa-solid fa-briefcase"></i>
+							Job experience
+						</a>
+					</li>
+					<li>
+						<a href="/portfolio">
+							<i class="fa-solid fa-briefcase"></i>
+							Portfolio
+						</a>
+					</li>
+					<li>
+						<a href="https://resume.daniloquispe.dev" target="_blank">
+							Resume (printable)
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="bottom">
+			<footer>
+				<nav class="footer-menu">
+					<ul>
+						<li>
+							<a href="https://github.com/daniloquispe" target="_blank" title="GitHub">
+								<span class="icon-[ant-design--github-outlined]" role="img" aria-hidden="true"></span>
+								<span class="sr-only">GitHub</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://pe.linkedin.com/in/daniloquispe" target="_blank" title="LinkedIn">
+								<span class="icon-[ant-design--linkedin-outlined]" role="img" aria-hidden="true"></span>
+								<span class="sr-only">LinkedIn</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+				<p>&copy; 2024 Danilo Alejandro Quispe Lucana</p>
+			</footer>
+		</div>
+	</div>
+</MainLayout>
+
+<style>
+	/* Hero */
+
+	.hero
+	{
+		@apply w-screen h-screen;
+		@apply bg-teal-900;
+		@apply text-lg text-center text-teal-100;
+		@apply flex flex-col;
+	}
+
+	.hero .center
+	{
+		@apply p-4;
+		@apply flex flex-col;
+		@apply flex-grow justify-center;
+	}
+
+	.hero header,
+	.hero main,
+	.hero footer
+	{
+		@apply my-5;
+	}
+
+	.hero header img
+	{
+		@apply inline;
+		@apply rounded-full border-2 border-solid border-teal-100;
+	}
+
+	.hero h1
+	{
+		@apply text-4xl sm:text-5xl;
+		@apply text-white font-bold tracking-wider;
+	}
+
+	.hero h1::before
+	{
+		@apply text-teal-500;
+		content: "<";
+	}
+
+	.hero h1::after
+	{
+		@apply text-teal-500;
+		content: ">";
+	}
+
+	.hero p
+	{
+		@apply my-2;
+		@apply text-xl sm:text-2xl;
+	}
+
+	.hero footer
+	{
+		@apply opacity-70;
+	}
+
+	.hero footer p
+	{
+		@apply text-lg;
+	}
+
+	/* Main navigation */
+
+	.main-menu ul
+	{
+		@apply sm:flex sm:gap-2 sm:justify-center;
+	}
+
+	.main-menu a
+	{
+		@apply block sm:inline-block;
+		@apply my-2 sm:my-0 px-5 py-2;
+		@apply rounded-lg;
+		@apply text-white;
+		@apply bg-teal-700 hover:bg-orange-400 hover:shadow-lg;
+		@apply transition-colors;
+	}
+
+	.main-menu a svg
+	{
+		@apply inline-block h-4 w-4;
+	}
+
+	/* Footer menu */
+
+	.footer-menu
+	{
+		@apply items-center;
+	}
+
+	.footer-menu ul
+	{
+		@apply inline-flex gap-2;
+		@apply mb-2;
+	}
+
+	.footer-menu a
+	{
+		@apply flex flex-row items-center justify-center;
+		@apply h-12 w-12 rounded-full;
+		@apply bg-teal-700 text-teal-100 hover:bg-teal-800;
+		@apply text-2xl;
+		@apply transition-colors;
+	}
+</style>

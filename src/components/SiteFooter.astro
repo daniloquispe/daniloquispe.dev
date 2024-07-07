@@ -1,0 +1,59 @@
+---
+import GitHubIcon from "../icons/GitHubIcon.astro";
+---
+
+<footer id="inner-footer">
+	<nav class="footer-menu">
+		<ul>
+			<li>
+				<a href="https://github.com/daniloquispe" target="_blank" title="GitHub">
+					<span class="icon-[ant-design--github-outlined]" role="img" aria-hidden="true"></span>
+					<span class="sr-only">GitHub</span>
+				</a>
+			</li>
+			<li>
+				<a href="https://pe.linkedin.com/in/daniloquispe" target="_blank" title="LinkedIn">
+					<span class="icon-[ant-design--linkedin-outlined]" role="img" aria-hidden="true"></span>
+					<span class="sr-only">LinkedIn</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+	<p>&copy; 2024 Danilo Alejandro Quispe Lucana</p>
+</footer>
+
+<style>
+	#inner-footer
+	{
+		@apply p-4;
+		@apply bg-gray-200 dark:bg-gray-800;
+	}
+
+	/* Footer menu */
+
+	.footer-menu
+	{
+		@apply items-center;
+	}
+
+	.footer-menu ul
+	{
+		@apply inline-flex gap-2;
+		@apply mb-2;
+	}
+
+	.footer-menu a
+	{
+		@apply flex flex-row items-center justify-center;
+		@apply h-12 w-12 rounded-full;
+		@apply bg-teal-700 text-teal-100 hover:bg-teal-800;
+		@apply text-2xl;
+		@apply transition-colors;
+	}
+
+	#inner-footer .footer-menu a
+	{
+		@apply text-gray-600 dark:text-gray-300 hover:text-gray-100;
+		@apply bg-gray-300 dark:bg-gray-700 hover:bg-teal-700 dark:hover:bg-teal-800;
+	}
+</style>
